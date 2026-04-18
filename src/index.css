@@ -1,1 +1,90 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-size: 18px;
+}
+
+@theme {
+  --color-foreground: hsl(0, 0%, 95%);
+  --color-background: hsl(0, 0%, 90%);
+  --color-main: hsl(0, 0%, 0%);
+  --color-accent: hsl(45, 100%, 50%); /*ALT hsl(46, 65%, 52%)*/
+  /* --color-accent-alt: hsl(46, 65%, 52%); */
+  --color-shadow: hsl(0, 0%, 80%);
+  --color-outline: hsl(0, 0%, 10%);
+  --color-fixed: hsl(0, 0%, 95%);
+
+  --text-base: 1rem;
+  --text-sm: 1.5rem;
+  --text-md: 2rem;
+  --text-lg: 4rem;
+  --text-xl: 6rem;
+  --text-xxl: 8rem;
+
+  --font-brand: "Cloister Black";
+  --font-head: "Cooper Black";
+  --font-base: "Oswald";
+
+  --spacing-sm-: 0.5rem;
+  --spacing-md: 1.5rem;
+  --spacing-nav: 90px;
+
+  --leading-lg: 5.5rem;
+
+  --tracking-wide: 0.3rem;
+}
+
+.dark {
+  --color-foreground: hsl(0, 0%, 10%);
+  --color-background: hsl(0, 0%, 0%);
+  --color-main: hsl(0, 0%, 95%);
+  --color-shadow: hsl(0, 0%, 0%);
+  --color-outline: hsl(0, 0%, 50%);
+}
+
+@layer base {
+  body {
+    
+    @apply bg-background text-main font-base transition-colors
+           duration-300 ease-in-out;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* html {
+    overflow-y: scroll; /* always show scrollbar track */
+  /* }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  } */
+
+  /* ::-webkit-scrollbar-track {
+    background: transparent;
+  } */
+
+  /* ::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 60%);
+    border-radius: 4px;
+  } */ 
+
+  svg {
+    @apply stroke-main;
+  }
+}
+
+@utility btn-action {
+  &:hover {
+    @apply gap-[55%] transition-[hover,filter,gap] duration-300 ease-out 
+           justify-between brightness-90 dark:brightness-130;
+  }
+
+  &:active {
+    @apply gap-[55%] justify-between transition-[brightness] duration-0
+               brightness-70;
+  }
+}

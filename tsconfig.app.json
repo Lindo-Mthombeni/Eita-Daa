@@ -7,6 +7,13 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
+    // Path alias
+    "paths": {
+      "@/*": ["./src/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@lib/*": ["./src/lib/*"],
+    },
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
