@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router-dom";
+import { NavProvider } from "./lib/NavContext";
 
 const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -20,12 +21,16 @@ const updateTheme = () => {
 
 updateTheme();
 
+
+
 darkMediaQuery.addEventListener('change', updateTheme);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <NavProvider>
+        <App />
+      </NavProvider>
     </BrowserRouter>
   </StrictMode>,
 );

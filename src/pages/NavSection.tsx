@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { Menu, X, Squircle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Button } from "../lib/Buttons";
 import { LogInBtn } from "./LogIn";
 import { SignUpBtn } from "./SignUp";
 import { HomeLink } from "./Home";
+import { useNav } from "../lib/NavContext";
 
 export const NavSection: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { menuOpen, toggleMenu } = useNav();
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -23,7 +24,7 @@ export const NavSection: React.FC = () => {
       const isActionItem = target.closest("a") || target.closest("button");
 
       if (menuOpen && isActionItem && !target.closest(".z-2")) {
-          setMenuOpen(false);
+          toggleMenu();
         }
     }}>
       <nav
@@ -51,35 +52,13 @@ export const NavSection: React.FC = () => {
             <Button
               variant="primary"
               className="p-0 bg-transparent"
-              onClick={() => setMenuOpen((menu) => !menu)}
+              onClick={toggleMenu}
             >
               {menuOpen ? <X /> : <Menu />}
             </Button>
           </div>
         </div>
       </nav>
-      {menuOpen && (
-        <div className="fixed inset-0 top-nav bg-red-500 lg:hidden z-50 grow">
-          <div className="flex flex-col gap-5 p-6 h-full">
-            <ul className="flex flex-col gap-2 text-sm">
-              <li>
-                <Link to="/home" onClick={() => setMenuOpen(false)}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/" onClick={() => setMenuOpen(false)}>
-                  Hero
-                </Link>
-              </li>
-            </ul>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-5 gap-y-3 bg-inherit">
-              <LogInBtn className="" />
-              <SignUpBtn className="" />
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

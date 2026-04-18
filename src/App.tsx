@@ -5,12 +5,17 @@ import { NavSection } from "./pages/NavSection";
 import "./App.css";
 import { SignUp } from "./pages/SignUp";
 import { LogIn } from "./pages/LogIn";
+import { useNav } from "./lib/NavContext";
+import { SideBar } from "./pages/SideBar";
 
 function App() {
+  const { menuOpen } = useNav();
+
   return (
     <>
       <NavSection />
-      <main >
+      <main className="min-h-screen">
+        {menuOpen && <SideBar />}
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/home" element={<Home />} />

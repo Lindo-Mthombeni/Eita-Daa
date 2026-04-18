@@ -2,8 +2,10 @@ import { ArrowRight } from "lucide-react";
 import Logo from "@images/Logo.jpeg";
 import { Button } from "@lib/Buttons";
 import { Link } from "react-router-dom";
+import { useNav } from "@/lib/NavContext";
 
 export const Hero: React.FC = () => {
+
   return (
     <section
       className="relative w-full overflow-hidden bg-background flex flex-col
