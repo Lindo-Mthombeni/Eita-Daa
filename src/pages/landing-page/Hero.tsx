@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export const Hero: React.FC = () => {
   return (
     <section
-      // className="relative w-full overflow-hidden bg-background flex flex-col
-      //            pb-20 pl-6 lg:pl-[min(5%,250px)]"
-      // style={{ height: "calc(100svh - 80px)" }}
-    ><h1>Hello</h1>
-      {/* <div
+      className="relative w-full overflow-hidden bg-background flex flex-col
+                 pb-20 pl-6 lg:pl-[min(5%,250px)]"
+      style={{ height: "calc(100svh - 80px)" }}
+    >
+      <div
         className="absolute inset-0 h-full w-full bg-center bg-no-repeat 
                    lg:bg-contain bg-cover mix-blend-multiply dark:invert 
                    dark:mix-blend-screen contrast-150
@@ -51,12 +51,12 @@ export const Hero: React.FC = () => {
         <Link
          to="/explore"
           className="px-5 py-4 text-fixed font-black border-b-2 
-                     border-fixed flex justify-between
+                     border-fixed flex items-center
                      dark:hover:bg-white/10"
         >
           <span>EXPLORE</span> <ArrowRight className="stroke-fixed" />
         </Link>
-      </div> */}
+      </div>
     </section>
   );
 };
