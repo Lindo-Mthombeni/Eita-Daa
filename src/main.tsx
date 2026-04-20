@@ -25,6 +25,12 @@ darkMediaQuery.addEventListener('change', updateTheme);
 
 const baseUrl = import.meta.env.BASE_URL;
 
+const redirect = sessionStorage.redirect;
+delete sessionStorage.redirect;
+if (redirect && redirect !== location.href) {
+  history.replaceState(null, "", redirect);
+}
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter basename={baseUrl}>
