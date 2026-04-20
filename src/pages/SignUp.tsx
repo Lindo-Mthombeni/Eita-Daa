@@ -11,7 +11,7 @@ export const SignUpBtn = (props: Omit<LinkProps, "to">) => {
       <Button
         effect={true}
         variant="secondary"
-        className={`h-10 hover:text-accent dark:hover:bg-white/10`}
+        className={`h-10 hover:text-accent dark:hover:bg-white/10 w-full`}
       >
         Sign Up
       </Button>

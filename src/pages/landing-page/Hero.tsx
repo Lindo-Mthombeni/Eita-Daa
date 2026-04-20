@@ -23,10 +23,10 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/40 to-transparent" />
       <div className="absolute inset-0 bg-linear-to-r from-black/70 via-transparent to-transparent" />
 
-      <div className="mt-auto z-5 flex flex-col mb-15 text-fixed min-h-75">
-        <h1 className="text-xl font-head italic">Wear What</h1>
-        <div className="text-xxl leading-lg font-black">
-          <p className="md:mt-10 lg:mt-15">
+      <div className="z-5 flex flex-col text-fixed grow justify-end mb-15 pb-[min(10vw,100px)]">
+        <h1 className="text-lg font-head italic">Wear What</h1>
+        <div className="text-xxl leading-lg lg:leading-25 font-black">
+          <p className="mt-10">
             <span className="font-brand text-brand">T</span>urns
             <br />
           </p>
@@ -43,14 +43,14 @@ export const Hero: React.FC = () => {
             variant="primary"
             className="relative px-10 py-4 bg-white text-black
                        font-black overflow-hidden hover:text-accent/90 w-full
-                       hover:bg-transparent border-2 border-fixed text-base"
+                       hover:bg-transparent border-2 border-fixed"
           >
             SHOP NOW
           </Button>
         </Link>
         <Link
           to="/explore"
-          className="px-5 py-4 text-fixed font-black border-b-2 text-base
+          className="px-5 py-4 text-fixed font-black border-b-2
                      border-fixed flex items-center gap-3 dark:hover:bg-white/10
                      transition-[gap] duration-200 ease-out hover:gap-[calc(70%-10px)]"
         >

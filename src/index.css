@@ -11,6 +11,7 @@
   --color-background: hsl(0, 0%, 90%);
   --color-main: hsl(0, 0%, 0%);
   --color-accent: hsl(45, 100%, 50%); /*ALT hsl(46, 65%, 52%)*/
+  --color-content: hsl(0, 0%, 60%);
   /* --color-accent-alt: hsl(46, 65%, 52%); */
   --color-section: hsl(0, 0%, 100%);
   --color-card: hsl(0, 0%, 80%);
@@ -20,10 +21,11 @@
 
   --text-xs: 0.75rem;      /* captions, labels */
   --text-base: 1rem;       /* body text */
-  --text-sm: 1.125rem;     /* small headings, subtext */
-  --text-md: 1.5rem;       /* section subheadings */
-  --text-lg: 2.5rem;          /* section headings */
-  --text-xl: 3.5rem;          /* page headings */
+  --text-larger: 1.5rem;   /* Base subheadings */
+  --text-md: 2rem;          /* text-highlight  */
+  --text-semi: 2.5rem;   /* Base heading size */
+  --text-lg: 3rem;          /* section subheadings  */
+  --text-xl: 4rem;          /* section/page headings */
   --text-xxl: clamp(4rem, 10vw, 7rem);  /* hero display */
   --text-brand: clamp(6rem, 14vw, 9rem);  /* T & H brand letters */
 
@@ -52,6 +54,14 @@
   --color-outline: hsl(0, 0%, 50%);
   --color-section: hsl(0, 0%, 5%);
   --color-card: hsl(0, 0%, 10%);
+}
+
+@utility text-heading {
+  @apply text-semi lg:text-xl font-head;
+}
+
+@utility text-subheading {
+  @apply text-larger lg:text-md font-bold;
 }
 
 @layer base {
