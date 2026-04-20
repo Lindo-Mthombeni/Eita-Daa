@@ -9,7 +9,7 @@ export const LogInBtn = (props: Omit<LinkProps, "to">) => {
   return (
     <Link {...props} to="/login">
       <Button
-      effect={true}
+        effect={true}
         variant="primary"
         className={`h-10 hover:bg-black/20 dark:hover:bg-white/20`}
       >
