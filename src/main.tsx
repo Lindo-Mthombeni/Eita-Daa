@@ -21,13 +21,13 @@ const updateTheme = () => {
 
 updateTheme();
 
-
-
 darkMediaQuery.addEventListener('change', updateTheme);
+
+const baseUrl = import.meta.env.BASE_URL;
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={baseUrl}>
       <NavProvider>
         <App />
       </NavProvider>
