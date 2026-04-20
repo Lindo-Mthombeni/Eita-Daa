@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, type LinkProps } from "react-router-dom";
 
 export const Home: React.FC = () => {
   return (
@@ -8,9 +8,14 @@ export const Home: React.FC = () => {
   );
 };
 
-export const HomeLink = ({className}: {className?: string}) => {
+export const HomeLink = (props: Omit<LinkProps, "to">) => {
   return (
-    <Link to="/home" className={className}>Home</Link>
-  )
-}
-
+    <Link
+      {...props}
+      to="/home"
+      className="hover:text-accent transition-all duration-200 ease-out"
+    >
+      Home
+    </Link>
+  );
+};

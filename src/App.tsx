@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import { Hero } from "./pages/landing-page/Hero";
-import { Home } from "./pages/Home";
-import { NavSection } from "./pages/NavSection";
+import { Home } from "@pages/Home";
+import { NavSection } from "@pages/NavSection";
 import "./App.css";
-import { SignUp } from "./pages/SignUp";
-import { LogIn } from "./pages/LogIn";
-import { useNav } from "./lib/NavContext";
-import { SideBar } from "./pages/SideBar";
+import { SignUp } from "@pages/SignUp";
+import { LogIn } from "@pages/LogIn";
+import { useNav } from "@lib/NavContext";
+import { SideBar } from "@pages/SideBar";
+import { LandingPage } from "@landing-page/LandingPage";
 
 function App() {
   const { menuOpen } = useNav();
@@ -14,10 +14,10 @@ function App() {
   return (
     <>
       <NavSection />
-      <main className="min-h-screen">
-        {menuOpen && <SideBar />}
+      {menuOpen && <SideBar />}
+      <main className="min-h-[calc(100vh-var(--spacing-nav))] pt-nav">
         <Routes>
-          <Route path="/" element={<Hero />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />

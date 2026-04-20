@@ -1,32 +1,35 @@
 import { useNav } from "@/lib/NavContext";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { LogInBtn } from "./LogIn";
 import { SignUpBtn } from "./SignUp";
+import { NavLinks } from "./NavLinks";
 
 export const SideBar: React.FC = () => {
+  const { toggleMenu } = useNav();
 
-    const { toggleMenu } = useNav();
-
-    return (
-        <div className="fixed inset-0 top-nav bg-red-500 lg:hidden z-50 grow">
-          <div className="flex flex-col gap-5 p-6 h-full">
-            <ul className="flex flex-col gap-2 text-sm">
-              <li>
-                <Link to="/home" onClick={toggleMenu}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/" onClick={toggleMenu}>
-                  Hero
-                </Link>
-              </li>
-            </ul>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-5 gap-y-3 bg-inherit">
-              <LogInBtn className="" />
-              <SignUpBtn className="" />
-            </div>
-          </div>
+  return (
+    <div
+      className="fixed inset-0 top-nav bg-foreground lg:hidden z-60 grow"
+      onClick={(e) => {
+        if ((e.target as HTMLElement).closest("a, button")) toggleMenu();
+      }}
+    >
+      <div className="flex flex-col gap-5 p-6 h-full">
+        <ul className="flex flex-col gap-2 text-base">
+          {NavLinks.map(({ to, label }) => (
+            <li key={label}>
+              <Link to={to} className="block py-2 text-sm hover:text-accent font-bold">
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] 
+                        gap-x-5 gap-y-3 bg-inherit mt-auto pb-10">
+          <LogInBtn />
+          <SignUpBtn />
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};

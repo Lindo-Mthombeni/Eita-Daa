@@ -12,6 +12,8 @@
       "@/*": ["./src/*"],
       "@images/*": ["./src/assets/images/*"],
       "@lib/*": ["./src/lib/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@landing-page/*": ["./src/pages/landing-page/*"],
     },
 
     /* Bundler mode */

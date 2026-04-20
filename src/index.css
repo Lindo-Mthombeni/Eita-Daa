@@ -12,16 +12,20 @@
   --color-main: hsl(0, 0%, 0%);
   --color-accent: hsl(45, 100%, 50%); /*ALT hsl(46, 65%, 52%)*/
   /* --color-accent-alt: hsl(46, 65%, 52%); */
-  --color-shadow: hsl(0, 0%, 80%);
+  --color-section: hsl(0, 0%, 100%);
+  --color-card: hsl(0, 0%, 80%);
+  --color-shadow: hsla(0, 0%, 59%, 0.6);
   --color-outline: hsl(0, 0%, 10%);
   --color-fixed: hsl(0, 0%, 95%);
 
-  --text-base: 1rem;
-  --text-sm: 1.5rem;
-  --text-md: 2rem;
-  --text-lg: 4rem;
-  --text-xl: 6rem;
-  --text-xxl: 8rem;
+  --text-xs: 0.75rem;      /* captions, labels */
+  --text-base: 1rem;       /* body text */
+  --text-sm: 1.125rem;     /* small headings, subtext */
+  --text-md: 1.5rem;       /* section subheadings */
+  --text-lg: 2.5rem;          /* section headings */
+  --text-xl: 3.5rem;          /* page headings */
+  --text-xxl: clamp(4rem, 10vw, 7rem);  /* hero display */
+  --text-brand: clamp(6rem, 14vw, 9rem);  /* T & H brand letters */
 
   --font-brand: "Cloister Black";
   --font-head: "Cooper Black";
@@ -32,8 +36,12 @@
   --spacing-nav: 90px;
 
   --leading-lg: 5.5rem;
+  --leading-xl: 6rem;
 
   --tracking-wide: 0.3rem;
+
+  --scale-hover: 1.05;
+  --scale-active: 0.95;
 }
 
 .dark {
@@ -42,17 +50,16 @@
   --color-main: hsl(0, 0%, 95%);
   --color-shadow: hsl(0, 0%, 0%);
   --color-outline: hsl(0, 0%, 50%);
+  --color-section: hsl(0, 0%, 5%);
+  --color-card: hsl(0, 0%, 10%);
 }
 
 @layer base {
   body {
     
     @apply bg-background text-main font-base transition-colors
-           duration-300 ease-in-out;
+           duration-300 ease-in-out text-base;
 
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    perspective: 1000px;
   }
 
   /* html {

@@ -14,10 +14,10 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ variant, children, className, ...props }, ref) => {
-    const baseStyles = "rounded-[50px] flex p-6";
+    const baseStyles = "rounded-2xl flex p-6";
 
     const variantStyles = {
-      primary: "",
+      primary: "bg-card p-10",
       secondary: "bg-foreground border border-outline",
     };
 

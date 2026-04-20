@@ -1,25 +1,20 @@
-import { Link } from "react-router-dom";
-import { Button } from "../lib/Buttons";
+import { Link, type LinkProps } from "react-router-dom";
+import { Button } from "@lib/Buttons";
 
 export const SignUp: React.FC = () => {
   return <h1>Sign Up</h1>;
 };
 
-export const SignUpBtn = ({ className }: { className?: string }) => {
+export const SignUpBtn = (props: Omit<LinkProps, "to">) => {
   return (
-    <Link to="/signup" className={className}>
+    <Link {...props} to="/signup">
       <Button
+        effect={true}
         variant="secondary"
-        className={`h-10 border-2 not-dark:hover:text-accent hover:scale-105 dark:hover:bg-white/20`}
+        className={`h-10 hover:text-accent dark:hover:bg-white/10`}
       >
         Sign Up
       </Button>
     </Link>
   );
 };
-
-//#746dff accent
-
-// rgb(150, 145, 255)  CHECK
-
-// rgb(207, 245, 106) Check
