@@ -40,7 +40,7 @@ export const Highlight: React.FC = () => {
           >
             <img
               src={img}
-              className={`w-full lg:w-[35%] lg:max-w-125 min-h-64 hover:scale-107
+              className={`w-full lg:w-[35%] lg:max-w-125 min-h-64 hover:scale-107 active:scale-107
                           aspect-auto rounded-2xl flex items-center justify-center 
                           text-sm shrink-0 transition-all duration-400 ease-out`}
             />
@@ -53,7 +53,7 @@ export const Highlight: React.FC = () => {
               <Button
                 effect={true}
                 variant="secondary"
-                className="w-fit px-6 py-3 rounded-lg hover:text-accent mt-15"
+                className="w-fit px-6 py-3 rounded-lg hover:text-accent active:text-accent mt-15"
               >
                 {buttonText}
               </Button>
