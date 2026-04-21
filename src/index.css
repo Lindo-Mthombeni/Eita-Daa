@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  font-size: 18px;
+}
+
 @theme {
   --color-foreground: hsl(0, 0%, 95%);
   --color-background: hsl(0, 0%, 90%);
