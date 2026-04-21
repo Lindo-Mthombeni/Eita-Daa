@@ -1,12 +1,10 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *)); */
 
 :root {
-  font-size: 18px;
-}
+  font-size: 16px;
 
-@theme {
   --color-foreground: hsl(0, 0%, 95%);
   --color-background: hsl(0, 0%, 90%);
   --color-main: hsl(0, 0%, 0%);
@@ -67,19 +65,47 @@
   @apply text-larger lg:text-md font-bold;
 } */
 
-@layer base {
+/* @layer base { */
   body {
-    @apply bg-background text-main transition-colors
-           duration-300 ease-in-out text-base;
+    background: var(--color-background);
+    color: var(--color-main);
+    /* @apply bg-background text-main transition-colors
+           duration-300 ease-in-out text-base; */
   }
 
   h1 {
     font-size: 3rem;
-    @apply text-heading font-black;
+    font-size: var(--text-heading);
+    font-weight: 900;
+    /* @apply text-heading font-black; */
   }
   h5 {
     font-size: 1.25rem;
-    @apply text-headline font-bold mt-2;
+    font-size: var(--text-headline);
+    font-weight: bold;
+    margin-top: 10px;
+    /* @apply text-headline font-bold mt-2; */
+  }
+  button {
+    background: white;
+    color: black;
+    border-radius: 9999px;
+    width: 265px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border: 0;
+
+    @media(width >= 960px){
+      width: max-content;
+    }
+    /* bg-white text-black mt-5 rounded-full hover:text-accent w-66.25 lg:w-fit py-2 px-6 font-bold*/
+  } 
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
   }
   /* html {
     overflow-y: scroll; /* always show scrollbar track */
@@ -98,7 +124,7 @@
     border-radius: 4px;
   } */
 
-  svg {
+  /* svg {
     @apply stroke-main;
   }
 }
@@ -113,4 +139,4 @@
     @apply gap-[55%] justify-between transition-[brightness] duration-0
                brightness-70;
   }
-}
+} */

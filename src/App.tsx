@@ -13,13 +13,13 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col justify-center h-screen">
+      <div className="wrapper">
         <h1>Make your show the next big thing</h1>
         <h5>
           Powerful tools from Spotify to manage and grow your audio or video
           podcast.
         </h5>
-        <button className="bg-white text-black mt-5 rounded-full hover:text-accent w-66.25 lg:w-fit py-2 px-6 font-bold">Get Started</button>
+        <button>Get Started</button>
       </div>
       {/* <NavSection />
       {menuOpen && <SideBar />}
