@@ -13,14 +13,15 @@ function App() {
 
   return (
     <>
-      <div className="wrapper">
+      <p>Hello</p>
+      {/* <div className="wrapper">
         <h1>Make your show the next big thing</h1>
         <h5>
           Powerful tools from Spotify to manage and grow your audio or video
           podcast.
         </h5>
         <button>Get Started</button>
-      </div>
+      </div> */}
       {/* <NavSection />
       {menuOpen && <SideBar />}
       <main className="min-h-[calc(100vh-var(--spacing-nav))] pt-nav">
