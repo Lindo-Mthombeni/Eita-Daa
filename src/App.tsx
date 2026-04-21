@@ -19,7 +19,7 @@ function App() {
           Powerful tools from Spotify to manage and grow your audio or video
           podcast.
         </h5>
-        <button className="bg-white text-black rounded-full hover:text-accent w-66.25 md:w-fit py-2 px-6">Get Started</button>
+        <button className="bg-white text-black rounded-full hover:text-accent w-66.25 lg:w-fit py-2 px-6">Get Started</button>
       </div>
       {/* <NavSection />
       {menuOpen && <SideBar />}
