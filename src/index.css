@@ -19,15 +19,15 @@
   --color-outline: hsl(0, 0%, 10%);
   --color-fixed: hsl(0, 0%, 95%);
 
-  --text-xs: 0.75rem;      /* captions, labels */
-  --text-base: 1rem;       /* body text */
-  --text-larger: 1.5rem;   /* Base subheadings */
-  --text-md: 2rem;          /* text-highlight  */
-  --text-semi: 2.5rem;   /* Base heading size */
-  --text-lg: 3rem;          /* section subheadings  */
-  --text-xl: 4rem;          /* section/page headings */
-  --text-xxl: clamp(4rem, 10vw, 7rem);  /* hero display */
-  --text-brand: clamp(6rem, 14vw, 9rem);  /* T & H brand letters */
+  --text-xs: 0.75rem; /* captions, labels */
+  --text-base: 1rem; /* body text */
+  --text-larger: 1.5rem; /* Base subheadings */
+  --text-md: 2rem; /* text-highlight  */
+  --text-semi: 2.5rem; /* Base heading size */
+  --text-lg: 3rem; /* section subheadings  */
+  --text-xl: 4rem; /* section/page headings */
+  --text-xxl: clamp(4rem, 10vw, 7rem); /* hero display */
+  --text-brand: clamp(6rem, 14vw, 9rem); /* T & H brand letters */
 
   --font-brand: "Cloister Black";
   --font-head: "Cooper Black";
@@ -66,12 +66,14 @@
 
 @layer base {
   body {
-    
     @apply bg-background text-main font-base transition-colors
            duration-300 ease-in-out text-base;
-
   }
 
+  h1 {
+    font-size: 2rem;
+    font-size: clamp(2rem, 0.7179487179487178rem + 5.47008547008547vw, 4rem);
+  }
   /* html {
     overflow-y: scroll; /* always show scrollbar track */
   /* }
@@ -87,7 +89,7 @@
   /* ::-webkit-scrollbar-thumb {
     background: hsl(0, 0%, 60%);
     border-radius: 4px;
-  } */ 
+  } */
 
   svg {
     @apply stroke-main;
