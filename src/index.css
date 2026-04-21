@@ -65,17 +65,17 @@
 
 @layer base {
   body {
-    @apply bg-background text-main font-base transition-colors
+    @apply bg-background text-main transition-colors
            duration-300 ease-in-out text-base;
   }
 
   h1 {
     font-size: 3rem;
-    @apply text-heading;
+    @apply text-heading font-black;
   }
   h5 {
     font-size: 1.25rem;
-    @apply text-headline;
+    @apply text-headline font-bold mt-2;
   }
   /* html {
     overflow-y: scroll; /* always show scrollbar track */
