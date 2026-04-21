@@ -13,7 +13,14 @@ function App() {
 
   return (
     <>
-    <h1>Hello</h1>
+      <div className="flex flex-col justify-center h-screen">
+        <h1>Make your show the next big thing</h1>
+        <h5>
+          Powerful tools from Spotify to manage and grow your audio or video
+          podcast.
+        </h5>
+        <button className="bg-white text-black rounded-full hover:text-accent w-66.25 md:w-fit py-2 px-6">Get Started</button>
+      </div>
       {/* <NavSection />
       {menuOpen && <SideBar />}
       <main className="min-h-[calc(100vh-var(--spacing-nav))] pt-nav">
