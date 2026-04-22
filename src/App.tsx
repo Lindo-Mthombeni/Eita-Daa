@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <p>Hello world</p>
+      <h1>Hello world</h1>
       {/* <div className="wrapper">
         <h1>Make your show the next big thing</h1>
         <h5>
