@@ -18,14 +18,19 @@ export const SideBar: React.FC = () => {
         <ul className="flex flex-col gap-2 text-base">
           {NavLinks.map(({ to, label }) => (
             <li key={label}>
-              <Link to={to} className="block py-2 text-sm hover:text-accent font-bold">
+              <Link
+                to={to}
+                className="block py-2 text-sm hover:text-accent font-bold"
+              >
                 {label}
               </Link>
             </li>
           ))}
         </ul>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] 
-                        gap-x-5 gap-y-3 bg-inherit mt-auto pb-10">
+        <div
+          className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] 
+                        gap-x-5 gap-y-3 bg-inherit mt-auto pb-10"
+        >
           <LogInBtn />
           <SignUpBtn />
         </div>

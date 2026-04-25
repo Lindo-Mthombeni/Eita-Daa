@@ -41,7 +41,7 @@ export const Highlight: React.FC = () => {
             <img
               src={img}
               className={`w-[min(90%,600px)] lg:w-[30%] lg:max-w-200 min-h-50 hover:scale-107 active:scale-107
-                          aspect-square rounded-2xl 
+                          aspect-square rounded-2xl mix-blend-multiply
                           shrink-0 transition-all duration-400 ease-out`}
             />
             <Card

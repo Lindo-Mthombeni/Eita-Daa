@@ -8,6 +8,6 @@ export function style(...inputs: ClassValue[]) {
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: "primary" | "secondary";
   children: React.ReactNode;
-  effect: Boolean;
+  effect: boolean;
   className?: string;
 };

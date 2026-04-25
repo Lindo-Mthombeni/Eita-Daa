@@ -20,6 +20,7 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       "@images": path.resolve(__dirname, "./src/assets/images"),
+      "@fonts": path.resolve(__dirname, "./src/assets/fonts"),
       "@lib": path.resolve(__dirname, "./src/lib"),
       "@pages": path.resolve(__dirname, "./src/pages"),
       "@landing-page": path.resolve(__dirname, "./src/pages/landing-page"),

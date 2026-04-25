@@ -1,0 +1,20 @@
+.os-scrollbar.os-scrollbar-vertical {
+  width: 1.2rem;
+  top: var(--spacing-nav) !important;
+  padding: 10px 2px !important;
+}
+
+.os-scrollbar-handle {
+  background-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+  border-radius: 9999px;
+}
+
+.os-scrollbar-track {
+  background-color: transparent;
+}
+
+.os-scrollbar-handle:hover {
+  background-color: var(--color-accent);
+}
+
+

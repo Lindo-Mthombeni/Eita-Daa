@@ -34,7 +34,7 @@ export const NavSection: React.FC = () => {
       <div className="flex w-full h-full items-center">
         <div className="flex gap-0.5 items-center grow font-head">
           <Squircle />
-          <h1 className="text-[20px]">EITA DAA</h1>
+          <h1 className="text-[20px] font-head">EITA DAA</h1>
         </div>
         <ul className="hidden gap-2 lg:flex lg:grow justify-self-center">
           {NavLinks.map(({ to, label }) => (

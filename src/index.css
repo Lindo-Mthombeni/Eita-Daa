@@ -1,9 +1,22 @@
-/* @import "tailwindcss";
+@import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *)); */
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   font-size: 16px;
+}
+
+@font-face {
+  font-family: "Heading";
+  src: url("./src/assets/fonts/Heading.ttf");
+}
+@font-face {
+  font-family: "Brand";
+  src: url("./src/assets/fonts/Brand.ttf");
+}
+
+@theme {
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
 
   --color-foreground: hsl(0, 0%, 95%);
   --color-background: hsl(0, 0%, 90%);
@@ -16,7 +29,7 @@
   --color-shadow: hsla(0, 0%, 59%, 0.6);
   --color-outline: hsl(0, 0%, 10%);
   --color-fixed: hsl(0, 0%, 95%);
- 
+
   /* --text-xs: 0.75rem;
   --text-larger: 1.5rem; 
   --text-md: 2rem; 
@@ -25,21 +38,22 @@
   --text-xl: 4rem; 
   --text-xxl: clamp(4rem, 10vw, 7rem); 
   --text-brand: clamp(6rem, 14vw, 9rem); */
-  
-  --text-base: 1rem; 
-  --text-heading: clamp(3rem, 2.358974358974359rem + 2.735042735042735vw, 4rem);
-  --text-headline: clamp(1.25rem, 1.0897435897435896rem + 0.6837606837606838vw, 1.5rem);
 
-  --font-brand: "Cloister Black";
-  --font-head: "Cooper Black";
-  --font-base: "Oswald";
+  --text-base: 1rem;
+  --text-xxl: clamp(5rem, 4.358974358974359rem + 2.735042735042735vw, 6rem);;
+  --text-xl: clamp(3rem, 2.358974358974359rem + 2.735042735042735vw, 4rem);
+  --text-lg: clamp(2rem, 1.358974358974359rem + 2.735042735042735vw, 3rem);
+  --text-md: clamp(1.25rem, 1.0897435897435896rem + 0.6837606837606838vw, 1.5rem);
+
+  --font-brand: "Brand";
+  --font-head: "Heading";
+  --font-base: "Oswald", "Source Sans 3";
 
   --spacing-sm-: 0.5rem;
   --spacing-md: 1.5rem;
   --spacing-nav: 90px;
 
-  --leading-lg: 5.5rem;
-  --leading-xl: 6rem;
+  --leading-lg: clamp(3.7rem, 2.2256410256410257rem + 6.29059829059829vw, 6rem);;
 
   --tracking-wide: 0.3rem;
 
@@ -57,74 +71,24 @@
   --color-card: hsl(0, 0%, 10%);
 }
 
-/* @utility text-heading {
-  @apply text-semi lg:text-xl font-head;
-} */
-
-/* @utility text-subheading {
-  @apply text-larger lg:text-md font-bold;
-} */
-
-/* @layer base { */
+@layer base {
   body {
-    background: var(--color-background);
-    color: var(--color-main);
-    /* @apply bg-background text-main transition-colors
-           duration-300 ease-in-out text-base; */
+    @apply bg-background text-base font-base text-main;
   }
 
   h1 {
     font-size: 3rem;
-    font-size: var(--text-heading);
-    font-weight: 900;
-    /* @apply text-heading font-black; */
+    @apply text-xl font-black;
+  }
+  h2 {
+    font-size: 2rem;
+    @apply text-lg font-black;
   }
   h5 {
     font-size: 1.25rem;
-    font-size: var(--text-headline);
-    font-weight: bold;
-    margin-top: 10px;
-    /* @apply text-headline font-bold mt-2; */
+    @apply text-md font-bold mt-2.5;
   }
-  button {
-    background: white;
-    color: black;
-    border-radius: 9999px;
-    width: 265px;
-    padding: 5px 10px;
-    font-weight: bold;
-    border: 0;
-
-    @media(width >= 960px){
-      width: max-content;
-    }
-    /* bg-white text-black mt-5 rounded-full hover:text-accent w-66.25 lg:w-fit py-2 px-6 font-bold*/
-  } 
-
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-  }
-  /* html {
-    overflow-y: scroll; /* always show scrollbar track */
-  /* }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  } */
-
-  /* ::-webkit-scrollbar-track {
-    background: transparent;
-  } */
-
-  /* ::-webkit-scrollbar-thumb {
-    background: hsl(0, 0%, 60%);
-    border-radius: 4px;
-  } */
-
-  /* svg {
+  svg {
     @apply stroke-main;
   }
 }
@@ -139,4 +103,14 @@
     @apply gap-[55%] justify-between transition-[brightness] duration-0
                brightness-70;
   }
-} */
+}
+
+@utility text-highlight {
+  @apply font-brand text-xxl text-accent;
+}
+
+@utility text-head {
+  @apply font-black font-head tracking-[0.2rem];
+  -webkit-text-stroke: 3.5px currentColor;
+  paint-order: stroke fill;
+}

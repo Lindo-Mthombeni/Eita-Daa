@@ -25,8 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       className={styleMerge(baseStyles, variantStyles[variant], effect ? "hover:scale-hover active:scale-active" : "", className)}
       {...props}
-    >
-      {children}
+    ><span className="text-md">{children}</span>
     </button>
   );
 };

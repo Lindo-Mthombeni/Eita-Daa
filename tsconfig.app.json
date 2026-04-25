@@ -11,6 +11,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@images/*": ["./src/assets/images/*"],
+      "@fonts/*": ["./src/assets/fonts/*"],
       "@lib/*": ["./src/lib/*"],
       "@pages/*": ["./src/pages/*"],
       "@landing-page/*": ["./src/pages/landing-page/*"],
