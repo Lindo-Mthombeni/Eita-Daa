@@ -31,7 +31,8 @@ function App() {
     <>
       <NavSection />
       {menuOpen && <SideBar />}
-      <main className="min-h-[calc(100vh-var(--spacing-nav))] pt-nav">
+      <main className="min-h-[calc(100vh-var(--spacing-nav))] pt-nav
+                      selection:bg-accent selection:text-white selection:stroke-white">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
