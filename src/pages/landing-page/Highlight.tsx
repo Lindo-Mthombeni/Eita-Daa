@@ -42,7 +42,7 @@ export const Highlight: React.FC = () => {
               src={img}
               className={`w-[min(90%,600px)] lg:w-[30%] lg:max-w-200 min-h-50 hover:scale-107 active:scale-107
                           aspect-square rounded-2xl mix-blend-multiply dark:mix-blend-normal
-                          shrink-0 transition-all duration-400 ease-out`}
+                          shrink-0 transition-all duration-400 ease-out select-none`}
             />
             <Card
               variant="primary"

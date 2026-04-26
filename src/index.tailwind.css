@@ -22,7 +22,7 @@
   --color-background: hsl(0, 0%, 90%);
   --color-main: hsl(0, 0%, 0%);
   --color-accent: hsl(45, 100%, 50%); /*ALT hsl(46, 65%, 52%)*/
-  --color-content: hsl(0, 0%, 60%);
+  --color-content: hsl(0, 0%, 30%);
   /* --color-accent-alt: hsl(46, 65%, 52%); */
   --color-section: hsl(0, 0%, 100%);
   --color-card: hsl(0, 0%, 80%);
@@ -70,12 +70,15 @@
   --color-outline: hsl(0, 0%, 50%);
   --color-section: hsl(0, 0%, 5%);
   --color-card: hsl(0, 0%, 10%);
+  --color-content: hsl(0, 0%, 60%);
 }
 
 @layer base {
   body {
     font-size: 1rem;
-    @apply bg-background text-base font-base text-main;
+    @apply bg-background text-base font-base text-main 
+              selection:bg-accent selection:text-white 
+              selection:stroke-white;
   }
 
   h1, h2, h3, h4, h5, h6 {
