@@ -8,11 +8,11 @@
 
 @font-face {
   font-family: "Heading";
-  src: url("./src/assets/fonts/Heading.ttf");
+  src: url("./assets/fonts/Heading.ttf");
 }
 @font-face {
   font-family: "Brand";
-  src: url("./src/assets/fonts/Brand.ttf");
+  src: url("./assets/fonts/Brand.ttf");
 }
 
 @theme {
