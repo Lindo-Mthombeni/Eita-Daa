@@ -1,5 +1,5 @@
 // import { ArrowRight } from "lucide-react";
-import Logo from "@images/Logo.jpeg";
+import Logo from "@images/Logo.webp";
 import { Button } from "@lib/Buttons";
 import { Link } from "react-router-dom";
 
@@ -23,28 +23,52 @@ export const Hero: React.FC = () => {
                      dark:from-black/60 dark:via-transparent dark:to-black/60"
       />
       <div className="relative h-full w-full z-11 flex flex-col items-center justify-center">
-        <h2 className="text-head italic">Wear What</h2>
-        <div className="flex gap-4">
-          <h1 className="leading-lg flex items-center">
-            <span className="text-highlight">T</span>urns
-          </h1>
-          <h1 className="leading-lg flex items-center">
-            <span className="text-highlight">H</span>eads
-          </h1>
-        </div>
-        <div className="text-center">
-          <h5>Discover the latest trends in fashion that make a statement</h5>
-        </div>
-        <div className="w-full">
-          <Button
-            effect={false}
-            variant="primary"
-            className="bg-foreground w-full hover:bg-transparent border-2 
-                        border-transparent hover:border-white"
+        <div className="w-full pl-grow flex flex-col">
+          <h2 className="text-head italic text-start w-full">Wear What</h2>
+          <div className="flex flex-col items-start w-full">
+            <h1 className="leading-lg flex items-center">
+              <span className="text-highlight">T</span>urns
+            </h1>
+            <h1 className="leading-lg flex items-center">
+              <span className="text-highlight">H</span>eads
+            </h1>
+          </div>
+          <div className="w-full">
+            <h5 className="w-[min(55vw,25rem)]">
+              Discover the latest trends in fashion that make a statement
+            </h5>
+          </div>
+          <div
+            className="mt-grow px-5 gap-10 gap-x-5 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] 
+                        w-[min(70%,50rem)]"
           >
-            sfd
-          </Button>
-          <Link to="/explore">Explore</Link>
+            <Link to="/shop">
+              <Button
+                effect={true}
+                variant="primary"
+                className="bg-same dark:text-black w-full active:bg-transparent border-2 
+                        border-transparent hover:text-accent active:border-white
+                        hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-same)_80%,transparent)]
+                        dark:hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-same)_40%,transparent)]"
+              >
+                Shop Now
+              </Button>
+            </Link>
+            <Link to="/explore">
+              <Button
+                effect={false}
+                variant="secondary"
+                className="relative w-full flex justify-start border-0 rounded-none group"
+              >
+                Explore
+                <div
+                  className="absolute inset-0 right-[90%] top-auto -bottom-1 h-1 
+                            group-hover:bg-black dark:group-hover:bg-same
+                               group-hover:right-0 transition-all ease-in-out duration-300"
+                />
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
       {/* <img

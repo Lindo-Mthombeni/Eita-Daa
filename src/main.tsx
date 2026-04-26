@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { NavProvider } from "./lib/NavContext";
 import 'overlayscrollbars/overlayscrollbars.css';
-import "./index.css";
+import "./index.tailwind.css";
 import App from "./App.tsx";
 
 const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');

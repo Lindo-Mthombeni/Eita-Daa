@@ -28,7 +28,7 @@
   --color-card: hsl(0, 0%, 80%);
   --color-shadow: hsla(0, 0%, 59%, 0.6);
   --color-outline: hsl(0, 0%, 10%);
-  --color-fixed: hsl(0, 0%, 95%);
+  --color-same: hsl(0, 0%, 95%);
 
   /* --text-xs: 0.75rem;
   --text-larger: 1.5rem; 
@@ -39,19 +39,20 @@
   --text-xxl: clamp(4rem, 10vw, 7rem); 
   --text-brand: clamp(6rem, 14vw, 9rem); */
 
-  --text-base: 1rem;
+  --text-base: clamp(1rem, 0.8076923076923077rem + 0.8205128205128207vw, 1.3rem);
+  --text-2xxl: clamp(5rem, 3.0769230769230766rem + 8.205128205128204vw, 8rem);
   --text-xxl: clamp(5rem, 4.358974358974359rem + 2.735042735042735vw, 6rem);;
   --text-xl: clamp(3rem, 2.358974358974359rem + 2.735042735042735vw, 4rem);
   --text-lg: clamp(2rem, 1.358974358974359rem + 2.735042735042735vw, 3rem);
+  --text-semi: clamp(1.5rem, 0.8589743589743589rem + 2.735042735042735vw, 2.5rem);
   --text-md: clamp(1.25rem, 1.0897435897435896rem + 0.6837606837606838vw, 1.5rem);
 
   --font-brand: "Brand";
   --font-head: "Heading";
   --font-base: "Oswald", "Source Sans 3";
 
-  --spacing-sm-: 0.5rem;
-  --spacing-md: 1.5rem;
   --spacing-nav: 90px;
+  --spacing-grow: clamp(2rem, -3.1282051282051286rem + 21.88034188034188vw, 10rem);
 
   --leading-lg: clamp(3.7rem, 2.2256410256410257rem + 6.29059829059829vw, 6rem);;
 
@@ -73,16 +74,25 @@
 
 @layer base {
   body {
+    font-size: 1rem;
     @apply bg-background text-base font-base text-main;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black;
   }
 
   h1 {
     font-size: 3rem;
-    @apply text-xl font-black;
+    @apply text-xl;
   }
   h2 {
     font-size: 2rem;
-    @apply text-lg font-black;
+    @apply text-lg;
+  }
+  h3 {
+    font-size: 1.5rem;
+    @apply text-semi;
   }
   h5 {
     font-size: 1.25rem;
@@ -106,7 +116,7 @@
 }
 
 @utility text-highlight {
-  @apply font-brand text-xxl text-accent;
+  @apply font-brand text-2xxl text-accent;
 }
 
 @utility text-head {

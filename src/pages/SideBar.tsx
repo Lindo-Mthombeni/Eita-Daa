@@ -9,7 +9,7 @@ export const SideBar: React.FC = () => {
 
   return (
     <div
-      className="fixed inset-0 top-nav bg-foreground lg:hidden z-60 grow"
+      className="fixed inset-0 top-nav bg-foreground dark:bg-background lg:hidden z-60 grow"
       onClick={(e) => {
         if ((e.target as HTMLElement).closest("a, button")) toggleMenu();
       }}
@@ -20,7 +20,7 @@ export const SideBar: React.FC = () => {
             <li key={label}>
               <Link
                 to={to}
-                className="block py-2 text-sm hover:text-accent font-bold"
+                className="block py-2 hover:text-accent font-bold"
               >
                 {label}
               </Link>

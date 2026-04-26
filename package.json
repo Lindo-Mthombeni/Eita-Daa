@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"npm:vite-dev\" \"npm:tailwind-watch\"",
     "vite-dev": "vite",
-    "tailwind-watch": "npx @tailwindcss/cli -i ./src/index.css -o ./style.css --watch",
+    "tailwind-watch": "npx @tailwindcss/cli -i ./src/index.tailwind.css -o ./style.css --watch",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

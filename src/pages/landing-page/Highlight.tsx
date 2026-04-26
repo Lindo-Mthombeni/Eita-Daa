@@ -41,14 +41,14 @@ export const Highlight: React.FC = () => {
             <img
               src={img}
               className={`w-[min(90%,600px)] lg:w-[30%] lg:max-w-200 min-h-50 hover:scale-107 active:scale-107
-                          aspect-square rounded-2xl mix-blend-multiply
+                          aspect-square rounded-2xl mix-blend-multiply dark:mix-blend-normal
                           shrink-0 transition-all duration-400 ease-out`}
             />
             <Card
               variant="primary"
               className="flex-1 flex flex-col justify-center gap-4 lg:my-[3%]"
             >
-              <h2 className="text-subheading">{heading}</h2>
+              <h3 className="text-subheading">{heading}</h3>
               <p className="text-content leading-relaxed grow">{text}</p>
               <Button
                 effect={true}
