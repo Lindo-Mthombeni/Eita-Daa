@@ -53,6 +53,8 @@
 
   --spacing-nav: 90px;
   --spacing-grow: clamp(2rem, -3.1282051282051286rem + 21.88034188034188vw, 10rem);
+  --spacing-subtle: clamp(2rem, 0.4999999999999998rem + 7.500000000000001vw, 5rem);
+  --spacing-md: clamp(6rem, 1.5rem + 22.5vw, 15rem);
 
   --leading-lg: clamp(3.7rem, 2.2256410256410257rem + 6.29059829059829vw, 6rem);;
 

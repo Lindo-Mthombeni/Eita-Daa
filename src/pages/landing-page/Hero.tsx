@@ -2,27 +2,38 @@
 import Logo from "@images/Logo.webp";
 import { Button } from "@lib/Buttons";
 import { Link } from "react-router-dom";
+import { ShopBtn } from "../Shop";
 
 export const Hero: React.FC = () => {
   return (
     <section
-      className="relative w-full overflow-hidden bg-background"
+      className="relative w-full overflow-hidden bg-background 
+                 "
       style={{ height: "calc(100svh - var(--spacing-nav))" }}
     >
       <div
-        className="absolute inset-0 bg-no-repeat bg-size-[auto_100%] bg-center
+        className="absolute inset-0 bg-no-repeat bg-size-[auto_100%] bg-center pointer-events-none
                    opacity-30 dark:opacity-70 not-dark:mix-blend-multiply dark:invert-100"
         style={{ backgroundImage: `url(${Logo})` }}
       ></div>
+      {/* Bottom fade-out overlay */}
       <div
-        className="absolute inset-0 dark:bg-linear-to-b z-10
-                    dark:from-black/80 dark:via-black/50 dark:to-black/90"
+        className="absolute inset-x-0 bottom-0 h-[40%] z-10 pointer-events-none
+             bg-linear-to-b from-transparent via-background/30 to-background"
       />
       <div
-        className="absolute inset-0 dark:bg-linear-to-r z-10
+        className="absolute inset-0 bg-linear-110 z-10 pointer-events-none
+                    from-black/90 to-transparent dark:hidden"
+      />
+      <div
+        className="absolute inset-0 bg-linear-to-b z-10 not-dark:hidden
+                 from-black/80 via-black/50 to-black/90 pointer-events-none"
+      />
+      <div
+        className="absolute inset-0 dark:bg-linear-to-r z-10 pointer-events-none
                      dark:from-black/60 dark:via-transparent dark:to-black/60"
       />
-      <div className="relative h-full w-full z-11 flex flex-col items-center justify-center">
+      <div className="relative h-full w-full z-11 flex flex-col items-center justify-center text-same">
         <div className="w-full pl-grow flex flex-col">
           <h2 className="text-head italic text-start w-full">Wear What</h2>
           <div className="flex flex-col items-start w-full">
@@ -40,20 +51,13 @@ export const Hero: React.FC = () => {
           </div>
           <div
             className="mt-grow px-5 gap-10 gap-x-5 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] 
-                        w-[min(70%,50rem)]"
+                        w-[min(70%,50rem)] z-40"
           >
-            <Link to="/shop">
-              <Button
-                effect={true}
-                variant="primary"
-                className="bg-same dark:text-black w-full active:bg-transparent border-2 
-                        border-transparent hover:text-accent active:border-white
-                        hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-same)_80%,transparent)]
-                        dark:hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-same)_40%,transparent)]"
-              >
-                Shop Now
-              </Button>
-            </Link>
+            <ShopBtn
+              className="bg-same text-black rounded-xl active:shadow-[0_0_0px_transparent]
+                         hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-same)_80%,transparent)]
+                         dark:hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-same)_40%,transparent)]"
+            />
             <Link to="/explore">
               <Button
                 effect={false}
@@ -63,7 +67,7 @@ export const Hero: React.FC = () => {
                 Explore
                 <div
                   className="absolute inset-0 right-[90%] top-auto -bottom-1 h-1 
-                            group-hover:bg-black dark:group-hover:bg-same
+                            group-hover:bg-same
                                group-hover:right-0 transition-all ease-in-out duration-300"
                 />
               </Button>

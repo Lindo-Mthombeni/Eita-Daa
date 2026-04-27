@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import { OverlayScrollbars } from "overlayscrollbars";
 import { Home } from "@pages/Home";
@@ -14,19 +14,26 @@ import { Explore } from "./pages/landing-page/Explore";
 
 function App() {
   const { menuOpen } = useNav();
+  const osInstanceRef = useRef<ReturnType<typeof OverlayScrollbars> | null>(null);
 
   useEffect(() => {
-    const instance = OverlayScrollbars(document.body, {
+    osInstanceRef.current = OverlayScrollbars(document.body, {
       scrollbars: { autoHide: "scroll" },
     });
 
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    return () => {
+      osInstanceRef.current?.destroy();
+      osInstanceRef.current = null;
+    };
+  }, []);
 
-    return () => instance.destroy();
+  useEffect(() => {
+    const instance = osInstanceRef.current;
+    if (!instance) return;
+
+    instance.options({
+      overflow: { y: menuOpen ? "hidden" : "scroll" },
+    });
   }, [menuOpen]);
 
   return (
@@ -34,8 +41,7 @@ function App() {
       <NavSection />
       {menuOpen && <SideBar />}
       <main
-        className="min-h-[calc(100vh-var(--spacing-nav))] pt-nav
-                      "
+        className="min-h-[calc(100vh-var(--spacing-nav))] pt-nav"
       >
         <Routes>
           <Route path="/" element={<LandingPage />} />

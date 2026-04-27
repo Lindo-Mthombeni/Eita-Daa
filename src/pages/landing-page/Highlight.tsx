@@ -1,8 +1,9 @@
 import { Button } from "@/lib/Buttons";
 import { Card } from "@/lib/Card";
-import Jersey1 from "@images/Jersey 1(front).jpeg";
-import Shirt3 from "@images/Shirt 3.jpeg";
-import Hat from "@images/Hat.jpeg";
+import Jersey1 from "@images/rtb-browse.webp";
+import Shirt3 from "@images/rtb-explore-lookbook.webp";
+import Hat from "@images/rtb-shop-new.webp";
+import { ShopBtn } from "../Shop";
 
 export const Highlight: React.FC = () => {
   const highlights = [
@@ -53,13 +54,17 @@ export const Highlight: React.FC = () => {
               <Button
                 effect={true}
                 variant="secondary"
-                className="w-fit px-6 py-3 rounded-lg hover:text-accent active:text-accent mt-15"
+                className="w-fit px-6 py-3 rounded-xl hover:text-accent active:text-accent mt-15"
               >
                 {buttonText}
               </Button>
             </Card>
           </div>
         ))}
+      </div>
+      <div className="mt-grow mx-auto flex justify-center">
+        <ShopBtn className="bg-black text-same dark:bg-transparent dark:border-main 
+                            w-[clamp(15rem,22.5rem+-12.5vw,20rem)]"/>
       </div>
     </section>
   );

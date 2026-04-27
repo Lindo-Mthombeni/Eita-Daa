@@ -13,8 +13,8 @@
   background-color: transparent;
 }
 
-.os-scrollbar-handle:hover {
+.os-scrollbar-handle:hover,
+.os-scrollbar-handle:active,
+.os-scrollbar-handle:focus {
   background-color: var(--color-accent);
 }
-
-
