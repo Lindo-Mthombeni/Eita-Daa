@@ -18,7 +18,8 @@ function App() {
 
   useEffect(() => {
     osInstanceRef.current = OverlayScrollbars(document.body, {
-      scrollbars: { autoHide: "scroll" },
+      scrollbars: { autoHide: "never" },
+      overflow: { y: "scroll" },
     });
 
     return () => {

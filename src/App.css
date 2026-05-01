@@ -2,7 +2,14 @@
   width: 1.2rem;
   top: var(--spacing-nav) !important;
   padding: 10px 2px !important;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-out;
 }
+.os-scrollbar.os-scrollbar-vertical:hover,
+.os-scrollbar.os-scrollbar-vertical:active {
+  opacity: 1;
+}
+
 
 .os-scrollbar-handle {
   background-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
@@ -17,4 +24,6 @@
 .os-scrollbar-handle:active,
 .os-scrollbar-handle:focus {
   background-color: var(--color-accent);
+  opacity: 1;
+  transition: background-color 0.5s ease-out;
 }

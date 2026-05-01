@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(70.4% 0.191 22.216);
     --color-yellow-300: oklch(90.5% 0.182 98.111);
     --color-yellow-400: oklch(85.2% 0.199 91.936);
     --color-gray-400: oklch(70.7% 0.022 261.325);
@@ -15,7 +14,6 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-3xl: 48rem;
-    --container-5xl: 64rem;
     --container-7xl: 80rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
@@ -67,7 +65,6 @@
     --font-base: "Oswald", "Source Sans 3";
     --spacing-nav: 90px;
     --spacing-grow: clamp(2rem, -3.1282051282051286rem + 21.88034188034188vw, 10rem);
-    --spacing-subtle: clamp(2rem, 0.4999999999999998rem + 7.500000000000001vw, 5rem);
     --spacing-md: clamp(6rem, 1.5rem + 22.5vw, 15rem);
     --leading-lg: clamp(3.7rem, 2.2256410256410257rem + 6.29059829059829vw, 6rem);
     --scale-hover: 1.05;
@@ -279,9 +276,6 @@
   }
   .z-11 {
     z-index: 11;
-  }
-  .z-20 {
-    z-index: 20;
   }
   .z-40 {
     z-index: 40;
@@ -568,9 +562,6 @@
   .border-2 {
     border-style: var(--tw-border-style);
     border-width: 2px;
-  }
-  .border-main {
-    border-color: var(--color-main);
   }
   .border-outline {
     border-color: var(--color-outline);
@@ -1013,6 +1004,11 @@
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-\[width\,opacity\] {
     transition-property: width,opacity;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -1079,13 +1075,6 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         right: calc(var(--spacing) * 0);
-      }
-    }
-  }
-  .group-hover\:w-60 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        width: calc(var(--spacing) * 60);
       }
     }
   }
@@ -1217,26 +1206,6 @@
     &:hover {
       @media (hover: hover) {
         border-color: var(--color-accent);
-      }
-    }
-  }
-  .hover\:border-accent\/30 {
-    &:hover {
-      @media (hover: hover) {
-        border-color: color-mix(in srgb, hsl(45, 100%, 50%) 30%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          border-color: color-mix(in oklab, var(--color-accent) 30%, transparent);
-        }
-      }
-    }
-  }
-  .hover\:border-accent\/70 {
-    &:hover {
-      @media (hover: hover) {
-        border-color: color-mix(in srgb, hsl(45, 100%, 50%) 70%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          border-color: color-mix(in oklab, var(--color-accent) 70%, transparent);
-        }
       }
     }
   }
@@ -1455,12 +1424,6 @@
   .dark\:hidden {
     &:where(.dark, .dark *) {
       display: none;
-    }
-  }
-  .dark\:border-2 {
-    &:where(.dark, .dark *) {
-      border-style: var(--tw-border-style);
-      border-width: 2px;
     }
   }
   .dark\:border-main {
